@@ -1,0 +1,24 @@
+{
+  "name": "biplane/yandex-direct-bundle",
+  "type": "symfony-bundle",
+  "description": "Integration of the biplane/yandex-direct with Symfony2",
+  "keywords": ["yandex", "yandex.direct", "Яндекс.Директ"],
+  "authors": [
+    {
+      "name": "Denis",
+      "email": "liquid.yethee@hotmail.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.4",
+    "symfony/framework-bundle": "~2.8|~3.0",
+    "biplane/yandex-direct": "~4.0@dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8.26"
+  },
+  "autoload": {
+    "psr-4": { "Biplane\\Bundle\\YandexDirectBundle\\": "" }
+  }
+}
