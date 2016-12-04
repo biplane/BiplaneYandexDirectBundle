@@ -6,21 +6,20 @@ cache:
   directories:
     - $HOME/.composer/cache
 
-php:
-  - '5.5'
-  - '5.6'
-  - '7.0'
-
 matrix:
   fast_finish: true
   include:
-    - php: 5.4
+    - php: 5.5
       env: COMPOSER_FLAGS="--prefer-lowest" SYMFONY_DEPRECATIONS_HELPER=weak
+    - php: 5.6
+    - php: 7.0
+    - php: 7.1
 
 before_install:
   - composer self-update
 
-install: composer update $COMPOSER_FLAGS --prefer-dist
+install:
+  - composer update $COMPOSER_FLAGS --prefer-dist
 
 script:
   - vendor/bin/phpunit
