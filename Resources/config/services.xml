@@ -4,18 +4,8 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="biplane_yandex_direct.auth" class="Biplane\YandexDirect\Auth\Authenticator" />
-
         <service id="biplane_yandex_direct.factory" class="Biplane\Bundle\YandexDirectBundle\UserFactory">
             <argument type="service" id="event_dispatcher" />
-        </service>
-
-        <service id="biplane_yandex_direct.ipc_factory" class="Biplane\SysV\Factory" public="false" />
-
-        <service id="biplane_yandex_direct.event_listener.concurrent" class="Biplane\YandexDirect\EventListener\ConcurrentListener">
-            <argument type="service" id="biplane_yandex_direct.ipc_factory" />
-
-            <tag name="kernel.event_subscriber" />
         </service>
 
         <service id="biplane_yandex_direct.dumper" class="Biplane\YandexDirect\Helper\Dumper" />

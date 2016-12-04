@@ -36,15 +36,9 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             )
         );
         $this->assertDICConstructorArguments(
-            $this->container->getDefinition('biplane_yandex_direct.ipc_factory'),
-            array('%kernel.cache_dir%/ipc')
-        );
-        $this->assertDICConstructorArguments(
             $this->container->getDefinition('biplane_yandex_direct.dumper'),
             array('%kernel.cache_dir%/api_dumps')
         );
-        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.auth'));
-        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.concurrent'));
         $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.dump'));
     }
 
@@ -65,33 +59,6 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
                 User::LOCALE_RU,
                 $userOptions
             )
-        );
-    }
-
-    public function testLoadWithAuthConfig()
-    {
-        $this->load(array(
-            'auth' => array(
-                'app_id' => 'id',
-                'app_secret' => 'topsecret'
-            )
-        ));
-
-        $this->assertDICConstructorArguments(
-            $this->container->getDefinition('biplane_yandex_direct.auth'),
-            array('id', 'topsecret')
-        );
-    }
-
-    public function testLoadWhenConcurrentListenerIsEnabled()
-    {
-        $this->load(array(
-            'concurrent_listener' => true
-        ));
-
-        $this->assertDICConstructorArguments(
-            $this->container->getDefinition('biplane_yandex_direct.event_listener.concurrent'),
-            array(new Reference('biplane_yandex_direct.ipc_factory'), 12)
         );
     }
 

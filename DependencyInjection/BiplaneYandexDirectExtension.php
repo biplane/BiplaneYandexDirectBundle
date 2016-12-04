@@ -34,27 +34,8 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
             $factoryDef->addMethodCall('enableSandbox');
         }
 
-        if (isset($config['auth'])) {
-            $container->getDefinition('biplane_yandex_direct.auth')->setArguments(array(
-                $config['auth']['app_id'],
-                $config['auth']['app_secret'],
-            ));
-        } else {
-            $container->removeDefinition('biplane_yandex_direct.auth');
-        }
-
-        $container->getDefinition('biplane_yandex_direct.ipc_factory')
-            ->addArgument($config['ipc']['directory']);
-
         $container->getDefinition('biplane_yandex_direct.dumper')
             ->addArgument($config['dump']['directory']);
-
-        if ($config['concurrent_listener']['enabled']) {
-            $container->getDefinition('biplane_yandex_direct.event_listener.concurrent')
-                ->addArgument($config['concurrent_listener']['connections']);
-        } else {
-            $container->removeDefinition('biplane_yandex_direct.event_listener.concurrent');
-        }
 
         if ($config['dump_listener']['enabled']) {
             $levelMap = array(

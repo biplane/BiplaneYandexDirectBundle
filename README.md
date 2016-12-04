@@ -30,16 +30,8 @@ public function registerBundles()
 
 ```yaml
 biplane_yandex_direct:
-    auth:
-
-        # The identifier of application for OAuth authorization.
-        app_id:               ~ # Required
-
-        # The secret key of application for OAuth authorization.
-        app_secret:           ~ # Required
-
     # The locale for localize message of errors.
-    locale:               ru # One of "ru"; "en"; "ua"
+    locale:               ru # One of "ru"; "en"; "ua"    
     user:
 
         # The access token for OAuth authorization
@@ -50,22 +42,12 @@ biplane_yandex_direct:
 
         # The master token needs for finance operations.
         master_token:         ~
-
-    # Restricts a number of concurrent connections to API.
-    concurrent_listener:
-        enabled:              false
-
-        # A number between 1 and 12.
-        connections:          12
+        
     dump_listener:
         enabled:              false
         directory:            '%kernel.cache_dir%/api_dumps'
         dump:                 all # One of "all"; "only-fail"
-    ipc:
-        directory:            '%kernel.cache_dir%/ipc'
 ```
-
-DI service `biplane_yandex_direct.auth` will not be registered, if `biplane_yandex_direct.auth` is not configured.
 
 ## License
 
