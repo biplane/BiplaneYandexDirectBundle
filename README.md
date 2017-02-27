@@ -53,4 +53,4 @@ biplane_yandex_direct:
 
 ## License
 
-This bundle i s under the MIT license, see the [LICENSE](Resources/meta/LICENSE) file for details.
+This bundle is under the MIT license, see the [LICENSE](Resources/meta/LICENSE) file for details.
