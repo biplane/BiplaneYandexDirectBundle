@@ -44,11 +44,13 @@ biplane_yandex_direct:
         master_token:         ~
         
     dump_listener:
-        enabled:              false
-        directory:            '%kernel.cache_dir%/api_dumps'
-        dump:                 all # One of "all"; "only-fail"
+        enabled:   false
+        dump:      all # One of "all"; "only-fail"
+
+    dump:
+        directory: '%kernel.cache_dir%/api_dumps'
 ```
 
 ## License
 
-This bundle is under the MIT license, see the [LICENSE](Resources/meta/LICENSE) file for details.
+This bundle i s under the MIT license, see the [LICENSE](Resources/meta/LICENSE) file for details.
