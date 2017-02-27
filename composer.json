@@ -5,14 +5,13 @@
   "keywords": ["yandex", "yandex.direct", "Яндекс.Директ"],
   "authors": [
     {
-      "name": "Denis",
-      "email": "liquid.yethee@hotmail.com"
+      "name": "Denis"
     }
   ],
   "license": "MIT",
   "require": {
     "symfony/framework-bundle": "~2.8|~3.0",
-    "biplane/yandex-direct": "~4.0@dev"
+    "biplane/yandex-direct": "~4.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8.26"
