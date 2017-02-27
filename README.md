@@ -1,5 +1,7 @@
 # BiplaneYandexDirectBundle
 
+[![Build Status](https://travis-ci.org/biplane/BiplaneYandexDirectBundle.svg?branch=master)](https://travis-ci.org/biplane/BiplaneYandexDirectBundle)
+
 This bundle integrates the [biplane-yandex-direct](https://github.com/biplane/yandex-direct) 
 library with Symfony project.
 
